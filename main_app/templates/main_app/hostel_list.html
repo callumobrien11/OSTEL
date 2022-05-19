@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Hostel Index Placeholder</h1>
+<ul>
+    {% for hostel in hostel_list %}
+        <li>Name: <a href="{% url 'hostel_details' hostel.id %}">{{ hostel.name }}</a></li>
+        <li>Description: {{ hostel.description }}</li>
+        <li>City: {{ hostel.city }}</li>
+        <li>Images: {{ hostel.image }}</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Hostel Detail Placeholder</h1>
+<ul>
+    <li>Name: {{ hostel.name }}</a></li>
+    <li>Description: {{ hostel.description }}</li>
+    <li>City: {{ hostel.city }}</li>
+    <li>Images: {{ hostel.image }}</li>
+</ul>
+<br>
+<ul>
+    {% for input in inputs %}
+        <li>By: {{ input.user_name }}</li>
+        <li>Title: {{ input.title }}</li>
+        <li>Type: {{ input.type }}</li>
+        <li>City: {{ input.city }}</li>
+        <li>Description: {{ input.description }}</li>
+        <li>Rating: {{ input.rating }}</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

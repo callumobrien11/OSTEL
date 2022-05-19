@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Review Index Placeholder</h1>
+<ul>
+    {% for input in inputs %}
+        <li>Hostel Name: {{ input.hostel_name }}</li>
+        <li>Title: {{ input.title }}</li>
+        <li>Type: {{ input.type }}</li>
+        <li>City: {{ input.city }}</li>
+        <li>Description: {{ input.description }}</li>
+        <li>Rating: {{ input.rating }}</li>
+        <li>Image: {{ input.image }}</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
