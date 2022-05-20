@@ -17,11 +17,21 @@ class Hostel(models.Model):
     class Meta:
         ordering = ['name']
 
+TYPES = (
+    ('1', 'Tip'),
+    ('2', 'Recommendation'),
+    ('3', 'Review')
+)
+
 class Input(models.Model):
     user_name = models.CharField(max_length=25)
     hostel_name = models.CharField(max_length=25)
     title = models.CharField(max_length=50)
-    type = models.CharField(max_length=25)
+    type = models.CharField(
+        max_length=25,
+        choices = TYPES,
+        default=TYPES[0][0]
+    )
     city = models.CharField(max_length=25)
     description = models.TextField(max_length=1000)
     rating = models.IntegerField()
