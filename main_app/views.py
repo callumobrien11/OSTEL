@@ -7,6 +7,7 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+from .forms import InputForm
 
 def home(request):
     return render(request, 'home.html')
@@ -39,21 +40,19 @@ def input_list(request):
     inputs = Input.objects.filter(user=request.user)
     return render(request, 'main_app/input_list.html', { 'inputs': inputs })
 
-class InputCreate(LoginRequiredMixin, CreateView):
-    model = Input
-    fields = ['user_name', 'hostel_name', 'title', 'type', 'description', 'city', 'rating', 'image']
-    success_url = '/input/create/'
-
-    def form_valid(self, form):
-        form.instance.user = self.request.user
-        return super().form_valid(form)
+@login_required
+def input_create(request):
+    input_form = InputForm()
+    return render(request, 'main_app/input_form.html', {
+        'input_form': input_form
+    })
 
 class InputDetail(DetailView):
     model = Input
 
 class InputUpdate(LoginRequiredMixin, UpdateView):
     model = Input
-    fields = ['user_name', 'hostel_name', 'title', 'type', 'description', 'city', 'rating', 'image']
+    fields = ['hostel_name', 'title', 'type', 'description', 'city', 'rating']
 
 class InputDelete(LoginRequiredMixin, DeleteView):
     model = Input
@@ -71,7 +70,7 @@ def signup(request):
       user = form.save()
       # This is how we log a user in via code
       login(request, user)
-      return redirect('')
+      return redirect('/')
     else:
       error_message = 'Invalid sign up - try again'
   # A bad POST or a GET request, so render signup.html with an empty form
