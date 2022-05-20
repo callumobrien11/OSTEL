@@ -41,7 +41,7 @@ def input_list(request):
 
 class InputCreate(LoginRequiredMixin, CreateView):
     model = Input
-    fields = ['user_name', 'hostel_name', 'title', 'type', 'description', 'city', 'rating', 'image']
+    fields = ['hostel_name', 'title', 'type', 'description', 'city', 'rating', 'image']
     success_url = '/input/create/'
 
     def form_valid(self, form):
@@ -53,7 +53,7 @@ class InputDetail(DetailView):
 
 class InputUpdate(LoginRequiredMixin, UpdateView):
     model = Input
-    fields = ['user_name', 'hostel_name', 'title', 'type', 'description', 'city', 'rating', 'image']
+    fields = ['hostel_name', 'title', 'type', 'description', 'city', 'rating', 'image']
 
 class InputDelete(LoginRequiredMixin, DeleteView):
     model = Input
