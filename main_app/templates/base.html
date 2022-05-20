@@ -1,41 +1,43 @@
+{% load static tailwind_tags %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Hostile Ostel</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <title class='text-red-500'>Hostile Ostel</title>
+  {% tailwind_css %}
 </head>
-<body>
-  <header class="navbar-fixed">
-    <nav>
-      <div class="nav-wrapper">
-        <ul>
-          <li><a href="/" class="left brand-logo">&nbsp;&nbsp;Ostel</a></li>
-        </ul>
-        <ul class="right">
-          <li><a href="{% url 'hostel_index' %}">Hostel List</a></li>
-          {% if user.is_authenticated %}
-            <li><a href="{% url 'hostel_create' %}">Add Hostel</a></li>
-            <li><a href="{% url 'input_index' %}">Review List</a></li>
-            <li><a href="{% url 'input_create' %}">Add Review</a></li>
-            <li><a href="{% url 'user_profile' user.id %}">Profile</a></li>
-            <li><a href="{% url 'logout' %}">Log Out</a></li>
-          {% else %}
-            <li><a href="{% url 'signup' %}">Sign Up</a></li>
-            <li><a href="{% url 'login' %}">Log In</a></li>
-          {% endif %}
-        </ul>
+<body class="bg-bluePalette-200 container justify-between h-screen">
+  <header class="sticky top-0 z-50 h-20">
+    {% comment %} NAV {% endcomment %}
+    <nav class="bg-bluePalette-400 backdrop-filter backdrop-blur-lg bg-opacity-70">
+      <div class="max-w-5xl mx-auto px-4">
+        <div class="flex items-center justify-between h-16">
+          <span><a href="/" class="left brand-logo">&nbsp;&nbsp;Ostel</a></span>
+          <div>
+            <a href="{% url 'hostel_index' %}">Hostel List</a></li>
+            {% if user.is_authenticated %}
+              <a href="{% url 'hostel_create' %}">Add Hostel</a></li>
+              <a href="{% url 'input_index' %}">Review List</a></li>
+              <a href="{% url 'input_create' %}">Add Review</a></li>
+              <a href="{% url 'user_profile' user.id %}">Profile</a></li>
+              <a href="{% url 'logout' %}">Log Out</a></li>
+            {% else %}
+              <a href="{% url 'signup' %}">Sign Up</a></li>
+              <a href="{% url 'login' %}">Log In</a></li>
+            {% endif %}
+          </div>
+        </div>
       </div>
     </nav>
   </header>
-  <main class="container">
+  <main class="relative bh">
     {% block content %}
     {% endblock %}
   </main>
-  <footer class="page-footer">
-    <div class="right">All Rights Reserved, &copy; 2022 Ostel LLC &nbsp;</div>
+  <footer class="">
+    <div class="center">All Rights Reserved, &copy; 2022 Ostel LLC &nbsp;</div>
   </footer>
 </body>
 </html>
