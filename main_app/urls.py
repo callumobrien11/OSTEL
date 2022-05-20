@@ -13,7 +13,7 @@ urlpatterns = [
 
     # Input URLs
     path('input/', views.input_list, name='input_index'),
-    path('input/create/', views.InputCreate.as_view(), name='input_create'),
+    path('input/create/', views.input_create, name='input_create'),
     path('input/<int:input_id>/', views.InputDetail.as_view(), name='input_details'),
     path('input/<int:input_id>/update/', views.InputUpdate.as_view(), name='input_update'),
     path('input/<int:input_id>/delete/', views.InputDelete.as_view(), name='input_delete'),
