@@ -4,7 +4,6 @@
  * If you need the full config, get it from here:
  * https://unpkg.com/browse/tailwindcss@latest/stubs/defaultConfig.stub.js
  */
-
 module.exports = {
     content: [
         /**
@@ -42,6 +41,9 @@ module.exports = {
         // '../../**/*.py'
     ],
     theme: {
+        fontFamily: {
+            'Lib': ['Libre Franklin', 'sans-serif'],
+        },
         colors: {
             transparent: 'transparent',
             'bluePalette': {
