@@ -4,3 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
+#id_description {
+    max-width: 225px;
+}

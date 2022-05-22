@@ -1,5 +1,6 @@
+from django import views
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
+from django.urls import reverse_lazy
 from .models import Hostel, User, Input
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
@@ -24,7 +25,8 @@ def hostel_details(request, hostel_id):
 class HostelCreate(LoginRequiredMixin, CreateView):
     model = Hostel
     fields = '__all__'
-    success_url = '/hostels/create/'
+    success_url = '/hostels/'
+
 
 class HostelUpdate(LoginRequiredMixin, UpdateView):
     model = Hostel
@@ -83,4 +85,5 @@ class UserDetail(LoginRequiredMixin, DetailView):
 
 class UserUpdate(LoginRequiredMixin, UpdateView):
     model = User
-    fields = ['username', 'email', 'first_name', 'last_name']
+    fields = ['email', 'first_name', 'last_name']
+    success_url= '/'

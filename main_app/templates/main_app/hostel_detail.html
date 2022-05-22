@@ -1,16 +1,19 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Hostel Detail Placeholder</h1>
+<h1>Hostels details </h1>
+
 <ul>
+    <li>Image: {{ hostel.image }}</li>
     <li>Name: {{ hostel.name }}</a></li>
-    <li>Description: {{ hostel.description }}</li>
     <li>City: {{ hostel.city }}</li>
-    <li>Images: {{ hostel.image }}</li>
+    <li>Description: {{ hostel.description }}</li>
 </ul>
 <br>
+<h3>Reviews</h3>
+<a href="{% url 'input_create' hostel.name hostel.city %}">Add review</a>
 <ul>
-    {% for input in inputs %}
+    {% for input in inputs%}
         <li>By: {{ input.user_name }}</li>
         <li>Title: {{ input.title }}</li>
         <li>Type: {{ input.type }}</li>

@@ -10,22 +10,56 @@
   {% tailwind_css %}
   {% comment %} Flowbite Tailwind Plugin {% endcomment %}
   <link rel="stylesheet" href="https://unpkg.com/flowbite@1.4.6/dist/flowbite.min.css" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;500;600&display=swap" rel="stylesheet"> 
-
 </head>
 <body class="bg-bluePalette-200 justify-between h-screen flex flex-col font-Lib">
   <header class="sticky top-0 z-50">
     {% comment %} NAV {% endcomment %}
-    <nav class="bg-bluePalette-400 backdrop-filter backdrop-blur-lg bg-opacity-70">
+    <nav class="bg-bluePalette-400 backdrop-filter backdrop-blur-lg bg-opacity-60">
       <div class="max-w-5xl mx-auto px-4">
-        <div class="flex items-center justify-between h-16">
-          <span><a href="/" class="left brand-logo">&nbsp;&nbsp;Ostel</a></span>
-            <button id="dropdownDefault" data-dropdown-toggle="dropdown" class="text-black bg-bluePalette-500 hover:bg-bluePalette-500 focus:ring-2 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button"> <3 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
-            <!-- Dropdown menu -->
-            <div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded shadow w-44 dark:bg-gray-700">
+        <div class="flex items-center h-16">
+          <span class="flex-1"><a href="/">Ostel</a></span>
+    {% comment %} Profile page {% endcomment %}
+          {% if user.is_authenticated %}
+          <button type="button" data-modal-toggle="defaultModal" class="m-2"> 
+            Profile
+          </button>
+          <div id="defaultModal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full">
+            <div class="relative p-4 w-full max-w-2xl h-full md:h-auto">
+                <!-- Modal content -->
+                <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                    <!-- Modal header -->
+                    <div class="flex justify-between items-start p-4 rounded-t border-b dark:border-gray-600">
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                            User Profile
+                        </h3>
+                        <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="defaultModal">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>  
+                        </button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="p-6 space-y-6">
+                        <div class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+                            <label class="border-b border-b-bluePalette-500 text-sm">Username </label>
+                            <p>{{user.username}} </p>
+                            <label class="border-b border-b-bluePalette-500 text-sm">Email </label>
+                            <p>{{user.email}} </p>
+                            <label class="border-b border-b-bluePalette-500 text-sm"> Name </label>
+                            <p>{{user.first_name}} {{user.last_name}}</p>
+                        </div>
+                    </div>
+                    <!-- Modal footer -->
+                    <div class="flex items-center p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
+                      <a class="" href="{% url 'user_profile_edit' user.id %}">Edit Profile</a>
+                    </div>
+                </div>
+            </div>
+          </div>
+          {% else %}
+          {% endif %}
+    {% comment %} Dropdown {% endcomment %}
+          <div id="dropdownDefault" data-dropdown-toggle="dropdown" class="h-8 bg-hamb bg-contain px-4 py-1 rounded-md opacity-70 hover:opacity-100"></div>
+            <!-- Dropdown menu content -->
+            <div id="dropdown" class="z-10 hidden bg-bluePalette-200 divide-y divide-gray-100 rounded shadow w-44 dark:bg-gray-700 border-2 border-bluePalette-400 transition-opacity duration-1000 ease-out ">
                 <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefault">
                   <li>
                     <a href="{% url 'hostel_index' %}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Hostel List</a>
@@ -40,6 +74,10 @@
                   <li>
                     <a href="{% url 'input_create' %}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Add Review</a>
                   </li>
+                  <div class="py-0.5 bg-bluePalette-300"></div>
+                  {% comment %} <li>
+                    <a href="{% url 'user_profile' user.id %}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Profile Page</a>
+                  </li> {% endcomment %}
                   <li>
                     <a href="{% url 'logout' %}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Log out</a>
                   </li>
@@ -62,7 +100,14 @@
     {% block content %}
     {% endblock %}
   </main>
-  <footer class="px-5 static object-bottom">
+  <footer class="px-5 static object-bottom bg-gradient-to-t from-bluePalette-400 to-bluePalette-200">
+    {% if user.is_authenticated %}
+    {% else %}
+    <div>
+      <a href="{% url 'signup' %}" class="block px-4 py-2 bg-bluePalette-400 hover:bg-bluePalette-100 dark:hover:bg-bluePalette-100 dark:hover:text-black rounded-lg">Sign Up</a>
+    <div>
+    {% endif %}
+    <div>YOu signed in you sexy thang</div>
     <div class="center">All Rights Reserved, &copy; 2022 Ostel LLC &nbsp;</div>
   </footer>
   <script src="https://unpkg.com/flowbite@1.4.6/dist/flowbite.js"></script>

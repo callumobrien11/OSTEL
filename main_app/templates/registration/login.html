@@ -1,14 +1,24 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Log In</h1>
-
 <!-- Add the login form -->
-<form method="post" action="{% url 'login' %}">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <input type="submit" class="btn" value="login">
-  <input type="hidden" name="next" value="{{ next }}">
-</form>
+<div class="border border-bluePalette-400 bg-bluePalette-300 rounded-lg my-4 shadow-lg">
+  <h1 class="my-3 text-2xl font-medium p-4">Login</h1>
+  <form action="{% url 'login' %}" method="POST">
+    {% csrf_token %}
+    <div class="p-2">
+        <div class="mx-4">
+          <label for="form.email" class="border-b border-b-bluePalette-500 text-sm"> Username</label>
+          <p>{{form.username}}</p>
+          <label for="form.first_name" class="border-b border-b-bluePalette-500 text-sm"> Password</label>
+          <p>{{form.password}}</p>
+        </div>
+        <div class="border rounded-md p-1 border-bluePalette-400 bg-bluePalette-200 hover:bg-bluePalette-400 m-4 text-center">
+          <input type="submit" class="btn" value="login">
+          <input type="hidden" name="next" value="{{ next }}">
+        </div>
+    </div>
+  </form>
+</div>
 
 {% endblock %}

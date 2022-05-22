@@ -1,11 +1,24 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>Hostel Create Placeholder</h1>
-  <form action="" method="post">
+
+<div class="border border-bluePalette-400 bg-bluePalette-300 rounded-lg my-4 shadow-lg">
+  <h1 class="my-3 text-2xl font-medium p-4">Add a Hostel</h1>
+  <form action="" method="POST">
     {% csrf_token %}
-    <table>
-        {{ form.as_table }}
-    </table>
-    <input type="submit" value="Submit!" class="btn">
+    <div class="p-2">
+        <div class="mx-4">
+          <label for="Hostel_name" class="border-b border-b-bluePalette-500 text-sm"> Hostel Name</label>
+          <p>{{form.name}}</p>
+          <label for="form.first_name" class="border-b border-b-bluePalette-500 text-sm"> Description</label>
+          <p class="">{{form.description}}</p>
+          <label for="form.last_name" class="border-b border-b-bluePalette-500 text-sm"> City</label>
+          <p>{{form.city}}</p>
+        </div>
+        <div class="border rounded-md p-1 border-bluePalette-400 bg-bluePalette-200 hover:bg-bluePalette-400 m-4 text-center">
+        <input type="submit" value="Add Hostel!">
+        </div>
+    </div>
   </form>
+</div>
+
 {% endblock %}
