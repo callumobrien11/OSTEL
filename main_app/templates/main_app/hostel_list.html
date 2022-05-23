@@ -6,8 +6,8 @@
 <h2>Hostels in (City) </h2>
 <div id="indicators-carousel" class="relative" data-carousel="static">
     <!-- Carousel wrapper -->
-    <div class="overflow-hidden relative h-48 rounded-lg sm:h-64 xl:h-80 2xl:h-96">
-        {% for hostel in hostel_list %}
+    {% for hostel in hostel_list %}
+    <div class="overflow-scroll relative h-48 rounded-lg sm:h-64 xl:h-80 2xl:h-96">
         <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
             <div class="p-6 max-w-[315px] justify-center align-middle rounded-lg border border-bluePalette-500 shadow-md dark:bg-bluePalette-300 dark:border-bluePalette-500">
                 <h2>{{ hostel.name }}</h2>
@@ -16,8 +16,8 @@
                 <p><a href="{% url 'hostel_details' hostel.id %}">Details Here</a></p>
             <img src="{{ hostel.image }}" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="...">
         </div>
-        {% endfor %}
     </div>
+    {% endfor %}
 
     <!-- Slider indicators -->
     <div class="flex absolute bottom-5 left-1/2 z-30 space-x-3 -translate-x-1/2">

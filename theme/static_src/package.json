@@ -8,7 +8,8 @@
     "build:clean": "rimraf ../static/css/dist",
     "build:tailwind": "cross-env NODE_ENV=production tailwindcss --postcss -i ./src/styles.css -o ../static/css/dist/styles.css --minify",
     "dev": "cross-env NODE_ENV=development tailwindcss --postcss -i ./src/styles.css -o ../static/css/dist/styles.css -w",
-    "tailwindcss": "node ./node_modules/tailwindcss/lib/cli.js"
+    "tailwindcss": "node ./node_modules/tailwindcss/lib/cli.js",
+    "autoprefixer": "postcss src/*.css --use autoprefixer -d build/"
   },
   "keywords": [],
   "author": "",
@@ -18,8 +19,10 @@
     "@tailwindcss/forms": "^0.4.0",
     "@tailwindcss/line-clamp": "^0.3.1",
     "@tailwindcss/typography": "^0.5.0",
+    "autoprefixer": "^10.4.7",
     "cross-env": "^7.0.3",
     "postcss": "^8.4.5",
+    "postcss-cli": "^9.1.0",
     "postcss-import": "^14.0.2",
     "postcss-nested": "^5.0.6",
     "postcss-simple-vars": "^6.0.3",
