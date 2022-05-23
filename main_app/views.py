@@ -8,6 +8,13 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .forms import InputForm
+import uuid
+import boto3
+from .models import Photo
+
+
+S3_BASE_URL = 'https://s3-us-west-1.amazonaws.com/'
+BUCKET = 'ostel-bucket'
 
 def home(request):
     return render(request, 'home.html')
@@ -84,3 +91,24 @@ class UserDetail(LoginRequiredMixin, DetailView):
 class UserUpdate(LoginRequiredMixin, UpdateView):
     model = User
     fields = ['username', 'email', 'first_name', 'last_name']
+
+def add_photo(request, hostel_id):
+    # photo-file will be the "name" attribute on the <input type="file">
+    photo_file = request.FILES.get('photo-file', None)
+    if photo_file:
+        s3 = boto3.client('s3')
+        # need a unique "key" for S3 / needs image file extension too
+        key = uuid.uuid4().hex[:6] + photo_file.name[photo_file.name.rfind('.'):]
+        # just in case something goes wrong
+        try:
+            s3.upload_fileobj(photo_file, BUCKET, key)
+            # build the full url string
+            url = f"{S3_BASE_URL}{BUCKET}/{key}"
+            # we can assign to hostel_id 
+            photo = Photo(url=url, hostel_id=hostel_id)
+            photo.save()
+        except:
+            print('An error occurred uploading file to S3')
+    return redirect('detail', hostel_id=hostel_id)
+
+
