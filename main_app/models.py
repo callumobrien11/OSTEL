@@ -43,3 +43,12 @@ class Input(models.Model):
     
     def get_absolute_url(self):
         return reverse('input_details', kwargs={'input_id': self.id})
+
+
+class Photo(models.Model):
+    url = models.CharField(max_length=200)
+    hostel = models.ForeignKey(Hostel, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"Photo for hostel_id: {self.hostel.id} @{self.url}"
