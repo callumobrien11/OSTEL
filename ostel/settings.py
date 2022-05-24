@@ -29,6 +29,8 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+AWS_DEFAULT_ACL = 'public-read'
+
 INSTALLED_APPS = [
     'tailwind',
     'main_app',

@@ -24,6 +24,5 @@ urlpatterns = [
     path('accounts/<int:pk>/edit/', views.UserUpdate.as_view(), name='user_profile_edit'),
 
     #AWS photos
-    path('hostels/<int:hostel_id>/add_photo/', views.add_photo, name="add_photo")
-
+    path('hostels/<int:hostel_id>/<int:user_id>/add_photo/', views.add_photo, name="add_photo")
 ]
