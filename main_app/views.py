@@ -101,7 +101,7 @@ def add_photo(request, hostel_id, user_id):
             photo = Photo(url=url, hostel_id=hostel_id, user_id=user_id)
             photo.save()
         except:
-            print('An error occurred uploading file to S3')
+            print('An error occurred')
     return redirect('hostel_details', hostel_id=hostel_id)
 
 
