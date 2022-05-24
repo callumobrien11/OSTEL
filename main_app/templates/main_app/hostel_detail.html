@@ -7,8 +7,27 @@
     <li>Description: {{ hostel.description }}</li>
     <li>City: {{ hostel.city }}</li>
     <li>Images: {{ hostel.image }}</li>
+</div>
+{% for photo in hostel.photo_set.all %}
+  <img src="{{photo.url}}">
+{% empty %}
+  <div>No Photos Uploaded</div>
+{% endfor %}
+{% for photo in hostel.photo_set.all %}
+    <img src="{{photo.url}}">
+{% empty %}
+    <div>No Photos Uploaded</div>
+{% endfor %}
+
+<!-- new code below -->
+<form action="{% url 'add_photo' hostel.id %}" enctype="multipart/form-data" method="POST">
+    {% csrf_token %}
+    <input type="file" name="photo-file">
+    <br><br>
+    <input type="submit" class="btn" value="Upload Photo">
+</form>
 </ul>
-<br>
+<br> 
 <ul>
     {% for input in inputs %}
         <li>By: {{ input.user_name }}</li>
