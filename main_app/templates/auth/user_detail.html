@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>User Detail Placeholder</h1>
+<h1 class="text-xl">{{ object.username }}</h1>
 <ul>
     <li>Username: {{ object.username }}</li>
     <li>Email Address: {{ object.email }}</li>
     <li>First Name: {{ object.first_name }}</li>
     <li>Last Name: {{ object.last_name }}</li>
 </ul>
-<a href="{% url 'user_profile_edit' object.id %}">Edit Profile</a>
+<a class="" href="{% url 'user_profile_edit' object.id %}">Edit Profile</a>
 
 {% endblock %}

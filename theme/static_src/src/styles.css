@@ -1,6 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;500;600&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;500;600&display=swap');
+
+.page_title {
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    margin-top:0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.form_label_style {
+    border-bottom-width: 1px;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}
+#id_name,
+#id_city,
+#id_username,
+#id_password1,
+#id_password2,
+#id_description {
+    min-width: 285px;
+    max-width: 285px;
+    border-radius: 5%;
+}

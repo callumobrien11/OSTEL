@@ -1,11 +1,22 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>User Update Placeholder</h1>
-  <form action="" method="post">
+<div class="border border-bluePalette-400 bg-bluePalette-300 rounded-lg my-4 shadow-lg">
+  <h1 class="page_title px-6">User Updating</h1>
+  <form action="{% url 'user_profile_edit' object.id %}" method="POST">
     {% csrf_token %}
-    <table>
-        {{ form.as_table }}
-    </table>
-    <input type="submit" value="Submit!" class="btn">
+    <div class="p-2">
+        <div class="mx-4">
+          <label for="form.email" class="form_label_style border-b-bluePalette-500"> Email</label>
+          <p>{{form.email}}</p>
+          <label for="form.first_name" class="form_label_style border-b-bluePalette-500"> First Name</label>
+          <p>{{form.first_name}}</p>
+          <label for="form.last_name" class="form_label_style border-b-bluePalette-500"> Last Name</label>
+          <p>{{form.last_name}}</p>
+        </div>
+        <div class="border rounded-md p-1 border-bluePalette-400 bg-bluePalette-200 hover:bg-bluePalette-400 m-4 text-center">
+        <input type="submit" value="Edit!">
+        </div>
+    </div>
   </form>
+</div>
 {% endblock %}

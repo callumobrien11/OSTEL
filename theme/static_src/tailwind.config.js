@@ -54,6 +54,9 @@ module.exports = {
                 500: '#010241',
             } 
         },
+        backgroundImage: {
+            'hamb': "url('/static/images/hamb.png')"
+        },
         extend: {},
     },
     plugins: [
