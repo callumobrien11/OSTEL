@@ -21,4 +21,13 @@ class Migration(migrations.Migration):
         migrations.DeleteModel(
             name='User',
         ),
+        migrations.CreateModel(
+            name='Photo',
+            fields=[
+                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('url', models.CharField(max_length=200))
+                ('hostel', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='hostel', to='main_app.hostel')),
+                ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='user', to='main_app.user')),
+            ]
+        )
     ]
