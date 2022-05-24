@@ -1,7 +1,6 @@
 from django import views
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
-from .models import Hostel, User, Input
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
 from django.contrib.auth import login
@@ -11,11 +10,11 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from .forms import InputForm
 import uuid
 import boto3
-from .models import Photo
+from .models import Hostel, User, Input, Photo
 
 
-S3_BASE_URL = 'https://s3-us-west-1.amazonaws.com/'
-BUCKET = 'ostel-bucket'
+S3_BASE_URL = 'https://s3.ca-central-1.amazonaws.com/'
+BUCKET = 'hostilehostel'
 
 def home(request):
     return render(request, 'home.html')
@@ -71,18 +70,13 @@ class InputDelete(LoginRequiredMixin, DeleteView):
 def signup(request):
   error_message = ''
   if request.method == 'POST':
-    # This is how to create a 'user' form object
-    # that includes the data from the browser
     form = UserCreationForm(request.POST)
     if form.is_valid():
-      # This will add the user to the database
       user = form.save()
-      # This is how we log a user in via code
       login(request, user)
       return redirect('/')
     else:
       error_message = 'Invalid sign up - try again'
-  # A bad POST or a GET request, so render signup.html with an empty form
   form = UserCreationForm()
   context = {'form': form, 'error_message': error_message}
   return render(request, 'registration/signup.html', context)
@@ -96,23 +90,18 @@ class UserUpdate(LoginRequiredMixin, UpdateView):
     fields = ['email', 'first_name', 'last_name']
     success_url= '/'
 
-def add_photo(request, hostel_id):
-    # photo-file will be the "name" attribute on the <input type="file">
+def add_photo(request, hostel_id, user_id):
     photo_file = request.FILES.get('photo-file', None)
     if photo_file:
         s3 = boto3.client('s3')
-        # need a unique "key" for S3 / needs image file extension too
         key = uuid.uuid4().hex[:6] + photo_file.name[photo_file.name.rfind('.'):]
-        # just in case something goes wrong
         try:
             s3.upload_fileobj(photo_file, BUCKET, key)
-            # build the full url string
             url = f"{S3_BASE_URL}{BUCKET}/{key}"
-            # we can assign to hostel_id 
-            photo = Photo(url=url, hostel_id=hostel_id)
+            photo = Photo(url=url, hostel_id=hostel_id, user_id=user_id)
             photo.save()
         except:
             print('An error occurred uploading file to S3')
-    return redirect('detail', hostel_id=hostel_id)
+    return redirect('hostel_details', hostel_id=hostel_id)
 
 
