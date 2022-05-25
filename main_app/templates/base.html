@@ -11,13 +11,13 @@
   {% comment %} Flowbite Tailwind Plugin {% endcomment %}
   <link rel="stylesheet" href="https://unpkg.com/flowbite@1.4.6/dist/flowbite.min.css" />
 </head>
-<body class="bg-bluePalette-200 justify-between h-screen flex flex-col font-Lib">
+<body class="bg-bluePalette-100 justify-between h-screen flex flex-col font-Lib">
   <header class="sticky top-0 z-50">
     {% comment %} NAV {% endcomment %}
-    <nav class="bg-bluePalette-400 backdrop-filter backdrop-blur-lg bg-opacity-60">
-      <div class="max-w-5xl mx-auto px-4">
+    <nav class="bg-bluePalette-350 backdrop-filter backdrop-blur-lg bg-opacity-60">
+      <div class="max-w-5xl mx-auto px-[10px]">
         <div class="flex items-center h-16">
-          <span class="flex-1"><a href="/">Ostel</a></span>
+          <span class="flex-1 text-base"><a href="/">Ostel</a></span>
     {% comment %} Profile page {% endcomment %}
           {% if user.is_authenticated %}
           <button type="button" data-modal-toggle="defaultModal" class="m-2"> 
@@ -54,22 +54,20 @@
                 </div>
             </div>
           </div>
-          {% else %}
-          {% endif %}
-    {% comment %} Dropdown {% endcomment %}
+        {% comment %} Dropdown {% endcomment %}
           <div id="dropdownDefault" data-dropdown-toggle="dropdown" class="h-8 bg-hamb bg-contain px-4 py-1 rounded-md opacity-70 hover:opacity-100"></div>
             <!-- Dropdown menu content -->
             <div id="dropdown" class="z-10 hidden bg-bluePalette-200 divide-y divide-gray-100 rounded shadow w-44 dark:bg-gray-700 border-2 border-bluePalette-400 transition-opacity duration-1000 ease-out ">
                 <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefault">
                   <li>
-                    <a href="{% url 'hostel_index' %}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Hostel List</a>
+                    <a href="{% url 'hostel_index' %}" class=" block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Hostel List</a>
                   </li>
                   {% if user.is_authenticated %}
                   <li>
                     <a href="{% url 'hostel_create' %}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Add Hostel</a>
                   </li>
                   <li>
-                    <a href="{% url 'input_index' %}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Review List</a>
+                    <a href="{% url 'input_index' %}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Community</a>
                   </li>
                   <li>
                     <a href="{% url 'input_create' %}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Add Review</a>
@@ -92,23 +90,20 @@
                 </ul>
             </div>
           </div>
+        {% else %}
+        <a href="{% url 'login' %}" class="block px-1 py-0.5 rounded-xl hover:bg-bluePalette-400">Log In</a>
+        <a href="{% url 'signup' %}" class="block px-1 py-0.5 hover:bg-bluePalette-100 border border-bluePalette-400 rounded-2xl">Sign Up</a>
+        {% endif %}
         </div>
       </div>
     </nav>
   </header>
-  <main class="px-5 flex-grow">
+  <main class="px-[10px] flex-grow">
     {% block content %}
     {% endblock %}
   </main>
-  <footer class="px-5 static object-bottom bg-gradient-to-t from-bluePalette-400 to-bluePalette-200">
-    {% if user.is_authenticated %}
-    {% else %}
-    <div>
-      <a href="{% url 'signup' %}" class="block px-4 py-2 bg-bluePalette-400 hover:bg-bluePalette-100 dark:hover:bg-bluePalette-100 dark:hover:text-black rounded-lg">Sign Up</a>
-    <div>
-    {% endif %}
-    <div>YOu signed in you sexy thang</div>
-    <div class="center">All Rights Reserved, &copy; 2022 Ostel LLC &nbsp;</div>
+  <footer class="px-[10px] static object-bottom">
+  
   </footer>
   <script src="https://unpkg.com/flowbite@1.4.6/dist/flowbite.js"></script>
 </body>

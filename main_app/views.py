@@ -54,9 +54,11 @@ def input_create(request):
     return render(request, 'main_app/input_form.html', {
         'input_form': input_form
     })
-
-class InputDetail(DetailView):
-    model = Input
+    
+@login_required
+def input_detail(request, input_id):
+    input = Input.objects.get(id=input_id)
+    return render(request, 'main_app/input_detail.html', { 'input': input})
 
 class InputUpdate(LoginRequiredMixin, UpdateView):
     model = Input
@@ -103,5 +105,4 @@ def add_photo(request, hostel_id, user_id):
         except:
             print('An error occurred')
     return redirect('hostel_details', hostel_id=hostel_id)
-
 

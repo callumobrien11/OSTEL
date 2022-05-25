@@ -1,25 +1,25 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1 class="">(City) Index Placeholder</h1>
+<h1 class="page_title">(City) Index</h1>
 
-<h2>Hostels in (City) </h2>
+<h2 class="page_title2">Hostels in (City) </h2>
 <div id="indicators-carousel" class="relative" data-carousel="static">
     <!-- Carousel wrapper -->
-    {% for hostel in hostel_list %}
-    <div class="overflow-scroll relative h-48 rounded-lg sm:h-64 xl:h-80 2xl:h-96">
+    <div class="overflow-hidden relative items-center align-middle text-center h-56 rounded-lg">
+        {% for hostel in hostel_list %}
         <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
-            <div class="p-6 max-w-[315px] justify-center align-middle rounded-lg border border-bluePalette-500 shadow-md dark:bg-bluePalette-300 dark:border-bluePalette-500">
-                <h2>{{ hostel.name }}</h2>
-                <p>City: {{ hostel.city }}</p>
-                <p class="bg-bluePalette-500">Images: {{ hostel.image }}</p>
+            <div class="p-6 w-[355px] rounded-lg border border-bluePalette-500 shadow-md dark:bg-bluePalette-300 dark:border-bluePalette-500">
+                <h2 class="page_title2 border-b border-bluePalette-500">{{ hostel.name }}</h2>
+                <p class="text-base">City: {{ hostel.city }}</p>
                 <p><a href="{% url 'hostel_details' hostel.id %}">Details Here</a></p>
-            <img src="{{ hostel.image }}" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="...">
+            </div>
         </div>
+        {% endfor %}
     </div>
-    {% endfor %}
+    
 
-    <!-- Slider indicators -->
+   <!-- Slider indicators -->
     <div class="flex absolute bottom-5 left-1/2 z-30 space-x-3 -translate-x-1/2">
         <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
         <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
@@ -41,27 +41,27 @@
         </span>
     </button>
 </div>
-<ul>
-    {% for hostel in hostel_list %}
-        <li>Name: <a href="{% url 'hostel_details' hostel.id %}">{{ hostel.name }}</a></li>
-    {% endfor %}
-</ul>
+
+{% comment %} <div>
+    <ul>    
+        {% for hostel in hostel_list %}
+            <li>Name: <a href="{% url 'hostel_details' hostel.id %}">{{ hostel.name }}</a></li>
+        {% endfor %}
+    </ul>
+</div> {% endcomment %}
 
 
-<h1> Experiences Index</h1>
+{% comment %} <h1 class="page_title2"> Experiences Index</h1>
 <div id="indicators-carousel" class="relative" data-carousel="static">
     <!-- Carousel wrapper -->
     <div class="overflow-hidden relative h-48 rounded-lg sm:h-64 xl:h-80 2xl:h-96">
-        {% for hostel in hostel_list %}
         <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
             <div class="p-6 max-w-[315px] justify-center align-middle rounded-lg border border-bluePalette-500 shadow-md dark:bg-bluePalette-300 dark:border-bluePalette-500">
-                <h2>{{ hostel.name }}</h2>
-                <p>City: {{ hostel.city }}</p>
+                <h2>Experience name</h2>
                 <p>Images: {{ hostel.image }}</p>
-                <p><a href="{% url 'hostel_details' hostel.id %}">Details Here</a></p>
+                <p><a href="/">Details Here</a></p>
             <img src="{{ hostel.image }}" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="...">
         </div>
-        {% endfor %}
     </div>
     <div> Missing Model?</div>
 
@@ -86,8 +86,8 @@
             <span class="hidden">Next</span>
         </span>
     </button>
-</div>
-<hr>
-<h1> Community </h1>
+</div> {% endcomment %}
+{% comment %} <hr>
+<h1> Community </h1> {% endcomment %}
 
 {% endblock %}
