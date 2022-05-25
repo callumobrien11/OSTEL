@@ -802,6 +802,30 @@ select {
   height: 12rem;
 }
 
+.h-32 {
+  height: 8rem;
+}
+
+.h-\[128\] {
+  height: 128;
+}
+
+.h-\[128px\] {
+  height: 128px;
+}
+
+.h-\[125px\] {
+  height: 125px;
+}
+
+.h-\[120px\] {
+  height: 120px;
+}
+
+.h-\[110px\] {
+  height: 110px;
+}
+
 .w-full {
   width: 100%;
 }
@@ -838,6 +862,18 @@ select {
 
 .w-8 {
   width: 2rem;
+}
+
+.w-\[264px\] {
+  width: 264px;
+}
+
+.w-\[255px\] {
+  width: 255px;
+}
+
+.w-\[355\] {
+  width: 355;
 }
 
 .max-w-5xl {
@@ -973,6 +1009,11 @@ select {
   border-top-right-radius: 0.75rem;
 }
 
+.rounded-b-xl {
+  border-bottom-right-radius: 0.75rem;
+  border-bottom-left-radius: 0.75rem;
+}
+
 .border-2 {
   border-width: 2px;
 }
@@ -1013,11 +1054,6 @@ select {
   border-bottom-color: rgb(1 2 65 / var(--tw-border-opacity));
 }
 
-.bg-bluePalette-100 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(202 240 248 / var(--tw-bg-opacity));
-}
-
 .bg-bluePalette-350 {
   --tw-bg-opacity: 1;
   background-color: rgb(34 156 243 / var(--tw-bg-opacity));
@@ -1035,6 +1071,11 @@ select {
 .bg-bluePalette-300 {
   --tw-bg-opacity: 1;
   background-color: rgb(0 180 216 / var(--tw-bg-opacity));
+}
+
+.bg-bluePalette-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(202 240 248 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-60 {
@@ -1055,6 +1096,10 @@ select {
 
 .bg-hali {
   background-image: url('/static/images/Halifax.jpg');
+}
+
+.bg-hostel {
+  background-image: url('/static/images/hostel.webp');
 }
 
 .bg-contain {
