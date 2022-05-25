@@ -50,15 +50,18 @@ def input_list(request):
 
 @login_required
 def input_create(request):
+    if request.method == "POST":
+        input_form = InputForm(request.POST)
+        if input_form.is_valid():
+            input = input_form.save(commit=False)
+            input.user = request.user
+            input.save()
+            return redirect('input_create')
     input_form = InputForm()
-    return render(request, 'main_app/input_form.html', {
-        'input_form': input_form
-    })
-    
-@login_required
-def input_detail(request, input_id):
-    input = Input.objects.get(id=input_id)
-    return render(request, 'main_app/input_detail.html', { 'input': input})
+    return render(request, 'main_app/input_form.html', { 'input_form': input_form })
+
+class InputDetail(LoginRequiredMixin, DetailView):
+    model = Input
 
 class InputUpdate(LoginRequiredMixin, UpdateView):
     model = Input
