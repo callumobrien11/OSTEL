@@ -12,12 +12,21 @@
     margin-bottom: 0.75rem;
 }
 
+.page_title2 {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: 500;
+}
 .form_label_style {
     border-bottom-width: 1px;
     font-size: 0.875rem;
     line-height: 1.25rem;
 }
 #id_name,
+#id_hostel_name,
+#id_title,
+#id_type,
+#id_rating,
 #id_city,
 #id_username,
 #id_password1,

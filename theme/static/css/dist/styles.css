@@ -660,13 +660,6 @@ select {
   position: sticky;
 }
 
-.inset-0 {
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-}
-
 .top-0 {
   top: 0px;
 }
@@ -679,16 +672,16 @@ select {
   left: 0px;
 }
 
-.top-1\/2 {
-  top: 50%;
+.bottom-5 {
+  bottom: 1.25rem;
 }
 
 .left-1\/2 {
   left: 50%;
 }
 
-.bottom-5 {
-  bottom: 1.25rem;
+.top-1\/2 {
+  top: 50%;
 }
 
 .z-50 {
@@ -697,10 +690,6 @@ select {
 
 .z-10 {
   z-index: 10;
-}
-
-.z-20 {
-  z-index: 20;
 }
 
 .z-30 {
@@ -720,9 +709,14 @@ select {
   margin-right: auto;
 }
 
-.my-2 {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
+.my-5 {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.my-\[15px\] {
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .my-4 {
@@ -735,8 +729,17 @@ select {
   margin-right: 1rem;
 }
 
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
 .ml-auto {
   margin-left: auto;
+}
+
+.ml-4 {
+  margin-left: 1rem;
 }
 
 .block {
@@ -779,6 +782,14 @@ select {
   height: 1.75rem;
 }
 
+.h-\[234px\] {
+  height: 234px;
+}
+
+.h-6 {
+  height: 1.5rem;
+}
+
 .h-56 {
   height: 14rem;
 }
@@ -803,16 +814,30 @@ select {
   width: 11rem;
 }
 
+.w-\[355px\] {
+  width: 355px;
+}
+
+.w-6 {
+  width: 1.5rem;
+}
+
+.w-min {
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+}
+
+.w-1 {
+  width: 0.25rem;
+}
+
 .w-3 {
   width: 0.75rem;
 }
 
 .w-8 {
   width: 2rem;
-}
-
-.w-1 {
-  width: 0.25rem;
 }
 
 .max-w-5xl {
@@ -831,13 +856,12 @@ select {
   flex: 1 1 0%;
 }
 
-.flex-grow {
-  flex-grow: 1;
+.shrink-0 {
+  flex-shrink: 0;
 }
 
-.translate-x-0 {
-  --tw-translate-x: 0px;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+.flex-grow {
+  flex-grow: 1;
 }
 
 .-translate-x-1\/2 {
@@ -847,20 +871,6 @@ select {
 
 .-translate-y-1\/2 {
   --tw-translate-y: -50%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.translate-x-full {
-  --tw-translate-x: 100%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.-translate-x-full {
-  --tw-translate-x: -100%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -916,10 +926,6 @@ select {
   overflow: hidden;
 }
 
-.overflow-scroll {
-  overflow: scroll;
-}
-
 .overflow-x-auto {
   overflow-x: auto;
 }
@@ -940,6 +946,14 @@ select {
   border-radius: 0.25rem;
 }
 
+.rounded-xl {
+  border-radius: 0.75rem;
+}
+
+.rounded-2xl {
+  border-radius: 1rem;
+}
+
 .rounded-full {
   border-radius: 9999px;
 }
@@ -952,6 +966,11 @@ select {
 .rounded-b {
   border-bottom-right-radius: 0.25rem;
   border-bottom-left-radius: 0.25rem;
+}
+
+.rounded-t-xl {
+  border-top-left-radius: 0.75rem;
+  border-top-right-radius: 0.75rem;
 }
 
 .border-2 {
@@ -970,9 +989,18 @@ select {
   border-top-width: 1px;
 }
 
+.border-b-0 {
+  border-bottom-width: 0px;
+}
+
 .border-bluePalette-400 {
   --tw-border-opacity: 1;
   border-color: rgb(0 119 182 / var(--tw-border-opacity));
+}
+
+.border-bluePalette-350 {
+  --tw-border-opacity: 1;
+  border-color: rgb(34 156 243 / var(--tw-border-opacity));
 }
 
 .border-bluePalette-500 {
@@ -985,28 +1013,28 @@ select {
   border-bottom-color: rgb(1 2 65 / var(--tw-border-opacity));
 }
 
-.bg-bluePalette-200 {
+.bg-bluePalette-100 {
   --tw-bg-opacity: 1;
-  background-color: rgb(144 224 239 / var(--tw-bg-opacity));
+  background-color: rgb(202 240 248 / var(--tw-bg-opacity));
 }
 
-.bg-bluePalette-400 {
+.bg-bluePalette-350 {
   --tw-bg-opacity: 1;
-  background-color: rgb(0 119 182 / var(--tw-bg-opacity));
+  background-color: rgb(34 156 243 / var(--tw-bg-opacity));
 }
 
 .bg-transparent {
   background-color: transparent;
 }
 
+.bg-bluePalette-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(144 224 239 / var(--tw-bg-opacity));
+}
+
 .bg-bluePalette-300 {
   --tw-bg-opacity: 1;
   background-color: rgb(0 180 216 / var(--tw-bg-opacity));
-}
-
-.bg-bluePalette-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(1 2 65 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-60 {
@@ -1017,17 +1045,24 @@ select {
   background-image: url('/static/images/hamb.png');
 }
 
-.from-bluePalette-400 {
-  --tw-gradient-from: #0077B6;
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(0 119 182 / 0));
+.bg-toronto {
+  background-image: url('/static/images/toronto.webp');
 }
 
-.to-bluePalette-200 {
-  --tw-gradient-to: #90E0EF;
+.bg-montreal {
+  background-image: url('/static/images/Mont.jpg');
+}
+
+.bg-hali {
+  background-image: url('/static/images/Halifax.jpg');
 }
 
 .bg-contain {
   background-size: contain;
+}
+
+.bg-cover {
+  background-size: cover;
 }
 
 .object-bottom {
@@ -1055,6 +1090,15 @@ select {
   padding: 0.5rem;
 }
 
+.p-5 {
+  padding: 1.25rem;
+}
+
+.px-\[10px\] {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -1080,14 +1124,18 @@ select {
   padding-bottom: 0px;
 }
 
-.px-5 {
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
+.px-1 {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
 }
 
 .px-6 {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+}
+
+.text-left {
+  text-align: left;
 }
 
 .text-center {
@@ -1102,6 +1150,11 @@ select {
   font-family: Libre Franklin, sans-serif;
 }
 
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
@@ -1110,11 +1163,6 @@ select {
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
-}
-
-.text-base {
-  font-size: 1rem;
-  line-height: 1.5rem;
 }
 
 .text-2xl {
@@ -1131,8 +1179,17 @@ select {
   font-weight: 600;
 }
 
+.font-medium {
+  font-weight: 500;
+}
+
 .leading-relaxed {
   line-height: 1.625;
+}
+
+.text-bluePalette-100 {
+  --tw-text-opacity: 1;
+  color: rgb(202 240 248 / var(--tw-text-opacity));
 }
 
 .opacity-70 {
@@ -1178,12 +1235,6 @@ select {
   transition-duration: 150ms;
 }
 
-.transition-all {
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
 .duration-1000 {
   transition-duration: 1000ms;
 }
@@ -1208,6 +1259,12 @@ select {
   margin-bottom: 0.75rem;
 }
 
+.page_title2 {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 500;
+}
+
 .form_label_style {
   border-bottom-width: 1px;
   font-size: 0.875rem;
@@ -1215,6 +1272,10 @@ select {
 }
 
 #id_name,
+#id_hostel_name,
+#id_title,
+#id_type,
+#id_rating,
 #id_city,
 #id_username,
 #id_password1,
@@ -1225,14 +1286,14 @@ select {
   border-radius: 5%;
 }
 
-.hover\:bg-bluePalette-100:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(202 240 248 / var(--tw-bg-opacity));
-}
-
 .hover\:bg-bluePalette-400:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(0 119 182 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-bluePalette-100:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(202 240 248 / var(--tw-bg-opacity));
 }
 
 .hover\:opacity-100:hover {
@@ -1265,18 +1326,9 @@ select {
     --tw-bg-opacity: 1;
     background-color: rgb(0 180 216 / var(--tw-bg-opacity));
   }
-
-  .dark\:hover\:bg-bluePalette-100:hover {
-    --tw-bg-opacity: 1;
-    background-color: rgb(202 240 248 / var(--tw-bg-opacity));
-  }
 }
 
 @media (min-width: 640px) {
-  .sm\:h-64 {
-    height: 16rem;
-  }
-
   .sm\:h-10 {
     height: 2.5rem;
   }
@@ -1285,17 +1337,16 @@ select {
     height: 1.5rem;
   }
 
+  .sm\:h-64 {
+    height: 16rem;
+  }
+
   .sm\:w-10 {
     width: 2.5rem;
   }
 
   .sm\:w-6 {
     width: 1.5rem;
-  }
-
-  .sm\:text-3xl {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
   }
 }
 

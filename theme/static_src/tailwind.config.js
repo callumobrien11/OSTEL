@@ -50,12 +50,16 @@ module.exports = {
                 100: '#CAF0F8',
                 200: '#90E0EF',
                 300: '#00B4D8',
+                350: '#229CF3',
                 400: '#0077B6',
                 500: '#010241',
             } 
         },
         backgroundImage: {
-            'hamb': "url('/static/images/hamb.png')"
+            'hamb': "url('/static/images/hamb.png')",
+            'toronto': "url('/static/images/toronto.webp')",
+            'montreal': "url('/static/images/Mont.jpg')",
+            'hali': "url('/static/images/Halifax.jpg')",
         },
         extend: {},
     },

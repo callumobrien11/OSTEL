@@ -10,7 +10,9 @@
         <li>City: {{ input.city }}</li>
         <li>Description: {{ input.description }}</li>
         <li>Rating: {{ input.rating }}</li>
+        <li><a href="{% url 'input_detail' input.id %}">Details </a></li>
     {% endfor %}
 </ul>
+<a href="{% url 'input_create'%}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Add Review</a>
 
 {% endblock %}

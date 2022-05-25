@@ -48,7 +48,7 @@ class Input(models.Model):
         return self.title
     
     def get_absolute_url(self):
-        return reverse('input_details', kwargs={'input_id': self.id})
+        return reverse('input_detail', kwargs={'input_id': self.id})
 
 
 class Photo(models.Model):
