@@ -8,6 +8,7 @@ class Hostel(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField(max_length=1000)
     city = models.CharField(max_length=100) # The longest city name in the world is 85 letters at the moment
+    country = models.CharField(max_length=100)
 
     def __str__(self):
         return self.name
