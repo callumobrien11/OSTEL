@@ -65,11 +65,12 @@ class InputDetail(LoginRequiredMixin, DetailView):
 
 class InputUpdate(LoginRequiredMixin, UpdateView):
     model = Input
-    fields = ['hostel_name', 'title', 'type', 'description', 'city', 'rating']
+    fields = ['title', 'type', 'description', 'city', 'rating']
+    success_url= '/input/'
 
 class InputDelete(LoginRequiredMixin, DeleteView):
     model = Input
-    success_url='/hostels/'
+    success_url='/input/'
 
 # User Views
 def signup(request):

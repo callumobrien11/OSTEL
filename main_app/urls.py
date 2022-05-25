@@ -14,9 +14,9 @@ urlpatterns = [
     # Input URLs
     path('input/', views.input_list, name='input_index'),
     path('input/create/', views.input_create, name='input_create'),
-    path('input/<int:input_id>', views.input_detail, name='input_detail'),
-    path('input/<int:input_id>/update/', views.InputUpdate.as_view(), name='input_update'),
-    path('input/<int:input_id>/delete/', views.InputDelete.as_view(), name='input_delete'),
+    path('input/<int:pk>', views.InputDetail.as_view(), name='input_detail'),
+    path('input/<int:pk>/update/', views.InputUpdate.as_view(), name='input_update'),
+    path('input/<int:pk>/delete/', views.InputDelete.as_view(), name='input_delete'),
 
     # User/Account URLs
     path('accounts/signup/', views.signup, name='signup'),
