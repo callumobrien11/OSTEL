@@ -696,10 +696,6 @@ select {
   z-index: 30;
 }
 
-.float-left {
-  float: left;
-}
-
 .m-2 {
   margin: 0.5rem;
 }
@@ -738,26 +734,12 @@ select {
   margin-bottom: 0.5rem;
 }
 
-.mx-\[-2\] {
-  margin-left: -2;
-  margin-right: -2;
-}
-
-.mx-0 {
-  margin-left: 0px;
-  margin-right: 0px;
-}
-
 .ml-auto {
   margin-left: auto;
 }
 
 .ml-4 {
   margin-left: 1rem;
-}
-
-.mb-4 {
-  margin-bottom: 1rem;
 }
 
 .block {
@@ -850,20 +832,12 @@ select {
   width: 0.25rem;
 }
 
-.w-\[315px\] {
-  width: 315px;
-}
-
 .w-3 {
   width: 0.75rem;
 }
 
 .w-8 {
   width: 2rem;
-}
-
-.w-auto {
-  width: auto;
 }
 
 .max-w-5xl {
@@ -1024,9 +998,9 @@ select {
   border-color: rgb(0 119 182 / var(--tw-border-opacity));
 }
 
-.border-bluePalette-300 {
+.border-bluePalette-350 {
   --tw-border-opacity: 1;
-  border-color: rgb(0 180 216 / var(--tw-border-opacity));
+  border-color: rgb(34 156 243 / var(--tw-border-opacity));
 }
 
 .border-bluePalette-500 {
@@ -1034,33 +1008,14 @@ select {
   border-color: rgb(1 2 65 / var(--tw-border-opacity));
 }
 
-.border-bluePalette-350 {
-  --tw-border-opacity: 1;
-  border-color: rgb(34 156 243 / var(--tw-border-opacity));
-}
-
 .border-b-bluePalette-500 {
   --tw-border-opacity: 1;
   border-bottom-color: rgb(1 2 65 / var(--tw-border-opacity));
 }
 
-.bg-bluePalette-200 {
+.bg-bluePalette-100 {
   --tw-bg-opacity: 1;
-  background-color: rgb(144 224 239 / var(--tw-bg-opacity));
-}
-
-.bg-bluePalette-400 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 119 182 / var(--tw-bg-opacity));
-}
-
-.bg-transparent {
-  background-color: transparent;
-}
-
-.bg-bluePalette-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 180 216 / var(--tw-bg-opacity));
+  background-color: rgb(202 240 248 / var(--tw-bg-opacity));
 }
 
 .bg-bluePalette-350 {
@@ -1068,9 +1023,18 @@ select {
   background-color: rgb(34 156 243 / var(--tw-bg-opacity));
 }
 
-.bg-bluePalette-100 {
+.bg-transparent {
+  background-color: transparent;
+}
+
+.bg-bluePalette-200 {
   --tw-bg-opacity: 1;
-  background-color: rgb(202 240 248 / var(--tw-bg-opacity));
+  background-color: rgb(144 224 239 / var(--tw-bg-opacity));
+}
+
+.bg-bluePalette-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 180 216 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-60 {
@@ -1091,15 +1055,6 @@ select {
 
 .bg-hali {
   background-image: url('/static/images/Halifax.jpg');
-}
-
-.from-bluePalette-400 {
-  --tw-gradient-from: #0077B6;
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(0 119 182 / 0));
-}
-
-.to-bluePalette-200 {
-  --tw-gradient-to: #90E0EF;
 }
 
 .bg-contain {
@@ -1139,12 +1094,9 @@ select {
   padding: 1.25rem;
 }
 
-.p-3 {
-  padding: 0.75rem;
-}
-
-.p-0 {
-  padding: 0px;
+.px-\[10px\] {
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .px-4 {
@@ -1172,33 +1124,14 @@ select {
   padding-bottom: 0px;
 }
 
-.px-\[10px\] {
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
-.px-6 {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-}
-
 .px-1 {
   padding-left: 0.25rem;
   padding-right: 0.25rem;
 }
 
-.px-2 {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-}
-
-.px-3 {
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-}
-
-.pl-1 {
-  padding-left: 0.25rem;
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 .text-left {
@@ -1217,6 +1150,11 @@ select {
   font-family: Libre Franklin, sans-serif;
 }
 
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
@@ -1225,11 +1163,6 @@ select {
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
-}
-
-.text-base {
-  font-size: 1rem;
-  line-height: 1.5rem;
 }
 
 .text-2xl {
@@ -1353,19 +1286,14 @@ select {
   border-radius: 5%;
 }
 
-.hover\:bg-bluePalette-100:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(202 240 248 / var(--tw-bg-opacity));
-}
-
 .hover\:bg-bluePalette-400:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(0 119 182 / var(--tw-bg-opacity));
 }
 
-.hover\:bg-bluePalette-500:hover {
+.hover\:bg-bluePalette-100:hover {
   --tw-bg-opacity: 1;
-  background-color: rgb(1 2 65 / var(--tw-bg-opacity));
+  background-color: rgb(202 240 248 / var(--tw-bg-opacity));
 }
 
 .hover\:opacity-100:hover {
@@ -1397,11 +1325,6 @@ select {
   .dark\:bg-bluePalette-300 {
     --tw-bg-opacity: 1;
     background-color: rgb(0 180 216 / var(--tw-bg-opacity));
-  }
-
-  .dark\:hover\:bg-bluePalette-100:hover {
-    --tw-bg-opacity: 1;
-    background-color: rgb(202 240 248 / var(--tw-bg-opacity));
   }
 }
 

@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load widget_tweaks%}
 {% block content %}
 
 <div class="border border-bluePalette-400 bg-bluePalette-300 rounded-lg my-4 shadow-lg">
@@ -24,7 +25,7 @@
           <p>{{input_form.city}}</p>
 
           <label for="Rating" class="form_label_style border-b-bluePalette-500"> Rating</label>
-          <p>{{input_form.rating}}</p>
+          <p>{{input_form.rating | attr:"max:10" | attr:"min:1"}}</p>
           
         </div>
         <div class="border rounded-md p-1 border-bluePalette-400 bg-bluePalette-200 hover:bg-bluePalette-400 m-4 text-center">
