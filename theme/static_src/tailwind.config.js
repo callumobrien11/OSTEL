@@ -60,6 +60,7 @@ module.exports = {
             'toronto': "url('/static/images/toronto.webp')",
             'montreal': "url('/static/images/Mont.jpg')",
             'hali': "url('/static/images/Halifax.jpg')",
+            'hostel': "url('/static/images/hostel.webp')"
         },
         extend: {},
     },

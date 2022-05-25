@@ -9,10 +9,13 @@
     <div class="overflow-hidden relative items-center align-middle text-center h-56 rounded-lg">
         {% for hostel in hostel_list %}
         <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
-            <div class="p-6 w-[355px] rounded-lg border border-bluePalette-500 shadow-md dark:bg-bluePalette-300 dark:border-bluePalette-500">
-                <h2 class="page_title2 border-b border-bluePalette-500">{{ hostel.name }}</h2>
+            <div class=" flex p-6 w-[355px] h-[234px] rounded-xl border-1 shadow-lg bg-hostel bg-contain">
+                <div class="flex-1 h-[110px]"></div>
+                <div class=" flex-grow bg-bluePalette-100 w-[355px] rounded-b-xl">
+                <h2 class="page_title">{{ hostel.name }}</h2>
                 <p class="text-base">City: {{ hostel.city }}</p>
                 <p><a href="{% url 'hostel_details' hostel.id %}">Details Here</a></p>
+                </div>
             </div>
         </div>
         {% endfor %}
