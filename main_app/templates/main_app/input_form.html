@@ -3,12 +3,12 @@
 
 <div class="border border-bluePalette-400 bg-bluePalette-300 rounded-lg my-4 shadow-lg">
   <h1 class="page_title p-4">Input Create</h1>
-  <form action="" method="POST">
+  <form method="POST">
     {% csrf_token %}
     <div class="p-2">
         <div class="mx-4">
           <label for="Hostel_name" class="form_label_style border-b-bluePalette-500"> Hostel Name</label>
-          <p>{{input_form.hostel_name}}</p>
+          <p>{{input_form.hostel}}</p>
 
           <label for="Title" class="form_label_style border-b-bluePalette-500"> Title</label>
           <p class="w-1">{{input_form.title}}</p>
@@ -27,7 +27,7 @@
           
         </div>
         <div class="border rounded-md p-1 border-bluePalette-400 bg-bluePalette-200 hover:bg-bluePalette-400 m-4 text-center">
-        <input type="submit" value="Add Hostel!">
+        <input type="submit" value="Add Input!">
         </div>
     </div>
   </form>
