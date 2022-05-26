@@ -1047,11 +1047,6 @@ select {
   background-color: rgb(0 180 216 / var(--tw-bg-opacity));
 }
 
-.bg-bluePalette-100 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(202 240 248 / var(--tw-bg-opacity));
-}
-
 .bg-opacity-60 {
   --tw-bg-opacity: 0.6;
 }
