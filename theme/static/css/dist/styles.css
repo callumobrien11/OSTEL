@@ -828,10 +828,24 @@ select {
   width: 0.25rem;
 }
 
-.w-max {
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
+.w-\[106px\] {
+  width: 106px;
+}
+
+.w-\[76px\] {
+  width: 76px;
+}
+
+.w-\[104px\] {
+  width: 104px;
+}
+
+.w-\[30px\] {
+  width: 30px;
+}
+
+.w-\[104pxpx\] {
+  width: 104pxpx;
 }
 
 .max-w-5xl {
@@ -1006,6 +1020,11 @@ select {
   border-color: rgb(0 180 216 / var(--tw-border-opacity));
 }
 
+.border-bluePalette-200 {
+  --tw-border-opacity: 1;
+  border-color: rgb(144 224 239 / var(--tw-border-opacity));
+}
+
 .border-b-bluePalette-500 {
   --tw-border-opacity: 1;
   border-bottom-color: rgb(1 2 65 / var(--tw-border-opacity));
@@ -1064,6 +1083,11 @@ select {
   background-color: rgb(252 211 77 / var(--tw-bg-opacity));
 }
 
+.bg-bluePalette-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(202 240 248 / var(--tw-bg-opacity));
+}
+
 .bg-opacity-60 {
   --tw-bg-opacity: 0.6;
 }
@@ -1088,12 +1112,28 @@ select {
   background-image: url('/static/images/hostel.webp');
 }
 
+.bg-ostel {
+  background-image: url('/static/images/Ostel.png');
+}
+
 .bg-contain {
   background-size: contain;
 }
 
 .bg-cover {
   background-size: cover;
+}
+
+.bg-clip-content {
+  background-clip: content-box;
+}
+
+.bg-origin-padding {
+  background-origin: padding-box;
+}
+
+.bg-origin-content {
+  background-origin: content-box;
 }
 
 .object-bottom {
@@ -1163,11 +1203,6 @@ select {
 .px-6 {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-}
-
-.py-4 {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
 }
 
 .pb-1 {
@@ -1248,6 +1283,28 @@ select {
   line-height: 1rem;
 }
 
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.text-\[33px\] {
+  font-size: 33px;
+}
+
+.text-\[32px\] {
+  font-size: 32px;
+}
+
+.text-\[31px\] {
+  font-size: 31px;
+}
+
 .font-semibold {
   font-weight: 600;
 }
@@ -1292,6 +1349,15 @@ select {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-transparent {
+  color: transparent;
+}
+
+.text-bluePalette-350 {
+  --tw-text-opacity: 1;
+  color: rgb(34 156 243 / var(--tw-text-opacity));
 }
 
 .opacity-70 {
@@ -1439,9 +1505,24 @@ select {
   background-color: rgb(202 240 248 / var(--tw-bg-opacity));
 }
 
+.hover\:bg-bluePalette-500:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(1 2 65 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-bluePalette-200:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(144 224 239 / var(--tw-bg-opacity));
+}
+
 .hover\:text-gray-900:hover {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
+}
+
+.hover\:text-bluePalette-100:hover {
+  --tw-text-opacity: 1;
+  color: rgb(202 240 248 / var(--tw-text-opacity));
 }
 
 .hover\:opacity-100:hover {

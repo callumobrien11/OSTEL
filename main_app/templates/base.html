@@ -16,13 +16,15 @@
 <body class="bg-white justify-between h-screen flex flex-col font-Lib">
   <header class="sticky top-0 z-50">
     {% comment %} NAV {% endcomment %}
-    <nav class="bg-bluePalette-350 backdrop-filter backdrop-blur-lg bg-opacity-60">
+    <nav class="bg-bluePalette-350">
       <div class="max-w-5xl mx-auto px-[10px]">
         <div class="flex items-center h-16">
-          <span class="flex-1 text-base"><a href="/">Ostel</a></span>
+          <div class="flex-1">
+          <a class="text-[31px] bg-ostel bg-cover text-transparent" href="/">HOstel?</a>
+          </div>
     {% comment %} Profile page {% endcomment %}
           {% if user.is_authenticated %}
-          <button type="button" data-modal-toggle="defaultModal" class="m-2"> 
+          <button type="button" data-modal-toggle="defaultModal" class="m-2 text-white"> 
             Profile
           </button>
           <div id="defaultModal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-auto fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full">
@@ -90,8 +92,8 @@
             </div>
           </div>
         {% else %}
-        <a href="{% url 'login' %}" class="block px-1 py-0.5 rounded-xl hover:bg-bluePalette-400">Log In</a>
-        <a href="{% url 'signup' %}" class="block px-1 py-0.5 hover:bg-bluePalette-100 border border-bluePalette-400 rounded-2xl">Sign Up</a>
+        <a href="{% url 'login' %}" class="text-white block px-1 py-0.5 rounded-xl hover:bg-bluePalette-400">Log In</a>
+        <a href="{% url 'signup' %}" class="text-bluePalette-350 bg-bluePalette-100 block px-1 py-0.5 hover:bg-bluePalette-400 hover:text-bluePalette-100 border border-bluePalette-200 rounded-2xl">Sign Up</a>
         {% endif %}
         </div>
       </div>
