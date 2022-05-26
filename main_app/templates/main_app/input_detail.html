@@ -1,14 +1,21 @@
-{% extends 'base.html' %}
-{% block content %}
-<h1>Input Detail Placeholder</h1>
+{% extends 'base.html' %} {% block content %}
+<h1 class="">Post Details</h1>
+<div>
+    <p>Title: {{ input.title }}</p>
+    <p>By: {{ input.user }}</p>
+    {% if input.type == '1' %}
+    <p class="text-sm">Tip</p>
+    {% elif input.type == '2' %}
+    <p class="text-sm">Recommendation</p>
+    {% else%}
+    <p class="text-sm">Review</p>
+    {% endif%}
+    <p>Rating: {{ input.rating }}/10</p>
+    <p>City: {{ input.city }}</p>
+    <p>Description: {{ input.description }}</p>
 
-<li>By: {{ input.user_name }}</li>
-<li>Title: {{ input.title }}</li>
-<li>Type: {{ input.type }}</li>
-<li>City: {{ input.city }}</li>
-<li>Description: {{ input.description }}</li>
-<li>Rating: {{ input.rating }}</li>
+</div>
+{% if user.id == input.user.id %}
 <a href="{% url 'input_update' input.id%}"> Edit</a>
 <a href="{% url 'input_delete' input.id%}"> Delete</a>
-
-{% endblock %}
+{% else %} {% endif %} {% endblock %}

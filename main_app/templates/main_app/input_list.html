@@ -1,29 +1,80 @@
 {% extends 'base.html' %} {% block content %}
 <div class="overflow-scroll">
   <h1 class="page_title">Community</h1>
-  <p class="page_title2 pb-2">What's everyone saying?</p>
+  <p class="page_title2 pb-2">What's chu saying?</p>
   
-  {% for input in inputs %}
-  <ul class="py-2">
-    <li class="text-lg font-bold">{{ input.title }}</li>
-    <li class="text-sm">by: {{input.user}}</li>
-    {% if input.type == '1' %}
-    <li class="text-sm">Tip</li>
-    {% elif input.type == '2' %}
-    <li class="text-sm">Recommendation</li>
-    {% else%}
-    <li class="text-sm">Review</li>
-    <li class="text-sm">Rating: {{ input.rating }}</li>
-    <li class="text-sm">Hostel: {{ input.hostel }}, City: {{ input.city }}</li>
-    {% endif%}
-    <li>City: {{ input.city }}</li>
-    <li>Description: {{ input.description }}</li>
 
-    <li class="text-right text-sm text-gray-400">
-      <a href="{% url 'input_detail' input.id %}">Read more... </a>
-    </li>
-  </ul>
-  {% endfor %}
+
+  <div class="mb-4 border-b border-gray-200 dark:border-gray-700">
+    <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="myTab" data-tabs-toggle="#myTabContent" role="tablist">
+        <li class="mr-2" role="presentation">
+            <button class="inline-block p-4 rounded-t-lg border-b-2" id="allposts-tab" data-tabs-target="#allposts" type="button" role="tab" aria-controls="allposts" aria-selected="false">All posts</button>
+        </li>
+        <li class="mr-2" role="presentation">
+            <button class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300" id="yourposts-tab" data-tabs-target="#yourposts" type="button" role="tab" aria-controls="yourposts" aria-selected="false">Your Posts</button>
+        </li>
+    </ul>
+</div>
+
+<div id="myTabContent">
+  {% comment %} All Posts {% endcomment %}
+    <div class="hidden p-4 bg-gray-50 rounded-lg" id="allposts" role="tabpanel" aria-labelledby="allposts-tab">
+      {% for allput in allputs %}
+      <ul class="py-2">
+        <li class="text-lg font-bold">{{ allput.title }}</li>
+        <li class="text-sm">by: {{allput.user}}</li>
+        {% if allput.type == '1' %}
+        <li class="text-sm">Tip</li>
+        <li>City: {{ allput.city }}</li>
+        {% elif input.type == '2' %}
+        <li class="text-sm">Recommendation</li>
+        <li>City: {{ allput.city }}</li>
+        {% else%}
+        <li class="text-sm">Review</li>
+        <li class="text-sm">Rating: {{ allput.rating }}</li>
+        <li class="text-sm">Hostel: {{ allput.hostel }}, City: {{ allput.city }}</li>
+        {% endif%}
+        <li>Description: {{ allput.description }}</li>
+    
+        <li class="text-right text-sm text-gray-400">
+          <a href="{% url 'input_detail' allput.id %}">Read more... </a>
+        </li>
+      </ul>
+      {% endfor %}
+    </div>
+    {% comment %} Your Posts {% endcomment %}
+    <div class="hidden p-4 bg-gray-50 rounded-lg dark:bg-gray-800" id="yourposts" role="tabpanel" aria-labelledby="yourposts-tab">
+      {% for input in inputs %}
+      <ul class="py-2">
+        <li class="text-lg font-bold">{{ input.title }}</li>
+        <li class="text-sm">by: {{input.user}}</li>
+        {% if input.type == '1' %}
+        <li class="text-sm">Tip</li>
+        <li>City: {{ input.city }}</li>
+        {% elif input.type == '2' %}
+        <li class="text-sm">Recommendation</li>
+        <li>City: {{ input.city }}</li>
+        {% else%}
+        <li class="text-sm">Review</li>
+        <li class="text-sm">Rating: {{ input.rating }}</li>
+        <li class="text-sm">Hostel: {{ input.hostel }}, City: {{ input.city }}</li>
+        {% endif%}
+        <li>Description: {{ input.description }}</li>
+    
+        <li class="text-right text-sm text-gray-400">
+          <a href="{% url 'input_detail' input.id %}">Read more... </a>
+        </li>
+      </ul>
+      {% endfor %}    
+    </div>
+</div>
+
+
+
+
+  
+
+  
   <a
     href="{% url 'input_create'%}"
     class="block px-4 py-2 rounded-xl bg-bluePalette-350 text-center"

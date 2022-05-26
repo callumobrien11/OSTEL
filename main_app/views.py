@@ -45,8 +45,9 @@ class HostelDelete(LoginRequiredMixin, DeleteView):
 # Input Views
 @login_required
 def input_list(request):
+    allputs = Input.objects.all()
     inputs = Input.objects.filter(user=request.user)
-    return render(request, 'main_app/input_list.html', { 'inputs': inputs })
+    return render(request, 'main_app/input_list.html', { 'inputs': inputs, 'allputs': allputs })
 
 @login_required
 def input_create(request):
