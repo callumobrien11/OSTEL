@@ -672,16 +672,16 @@ select {
   left: 0px;
 }
 
-.bottom-5 {
-  bottom: 1.25rem;
+.top-1\/2 {
+  top: 50%;
 }
 
 .left-1\/2 {
   left: 50%;
 }
 
-.top-1\/2 {
-  top: 50%;
+.bottom-5 {
+  bottom: 1.25rem;
 }
 
 .z-50 {
@@ -794,36 +794,16 @@ select {
   height: 14rem;
 }
 
-.h-3 {
-  height: 0.75rem;
+.h-\[110px\] {
+  height: 110px;
 }
 
 .h-48 {
   height: 12rem;
 }
 
-.h-32 {
-  height: 8rem;
-}
-
-.h-\[128\] {
-  height: 128;
-}
-
-.h-\[128px\] {
-  height: 128px;
-}
-
-.h-\[125px\] {
-  height: 125px;
-}
-
-.h-\[120px\] {
-  height: 120px;
-}
-
-.h-\[110px\] {
-  height: 110px;
+.h-3 {
+  height: 0.75rem;
 }
 
 .w-full {
@@ -856,24 +836,18 @@ select {
   width: 0.25rem;
 }
 
-.w-3 {
-  width: 0.75rem;
+.w-max {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
 }
 
 .w-8 {
   width: 2rem;
 }
 
-.w-\[264px\] {
-  width: 264px;
-}
-
-.w-\[255px\] {
-  width: 255px;
-}
-
-.w-\[355\] {
-  width: 355;
+.w-3 {
+  width: 0.75rem;
 }
 
 .max-w-5xl {
@@ -1179,6 +1153,10 @@ select {
   padding-right: 1.5rem;
 }
 
+.pb-4 {
+  padding-bottom: 1rem;
+}
+
 .text-left {
   text-align: left;
 }
@@ -1254,6 +1232,12 @@ select {
 .shadow-lg {
   --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.shadow-2xl {
+  --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
