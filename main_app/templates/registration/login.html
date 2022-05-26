@@ -2,23 +2,21 @@
 {% block content %}
 
 <!-- Add the login form -->
-<div class="border border-bluePalette-400 bg-bluePalette-300 rounded-lg my-4 shadow-lg">
-  <h1 class="page_title p-4">Login</h1>
-  <form action="{% url 'login' %}" method="POST">
-    {% csrf_token %}
-    <div class="p-2">
-        <div class="mx-4">
-          <label for="form.email" class="form_label_style border-b-bluePalette-500"> Username</label>
-          <p>{{form.username}}</p>
-          <label for="form.first_name" class="form_label_style border-b-bluePalette-500"> Password</label>
-          <p>{{form.password}}</p>
-        </div>
-        <div class="border rounded-md p-1 border-bluePalette-400 bg-bluePalette-200 hover:bg-bluePalette-400 m-4 text-center">
-          <input type="submit" class="btn" value="login">
-          <input type="hidden" name="next" value="{{ next }}">
-        </div>
-    </div>
-  </form>
-</div>
+<h1 class="page_title py-2">Login</h1>
+<form action="{% url 'login' %}" method="POST">
+  {% csrf_token %}
+  <div>
+      <div>
+        <label for="form.email" class="form_label_style border-b-bluePalette-500"> Username</label>
+        <p>{{form.username}}</p>
+        <label for="form.first_name" class="form_label_style border-b-bluePalette-500"> Password</label>
+        <p>{{form.password}}</p>
+      </div>
+      <div class="border rounded-md py-1 border-bluePalette-400 bg-bluePalette-300 hover:bg-bluePalette-400 my-4 text-center">
+        <input type="submit" class="btn" value="login">
+        <input type="hidden" name="next" value="{{ next }}">
+      </div>
+  </div>
+</form>
 
 {% endblock %}

@@ -17,22 +17,48 @@
     line-height: 1.75rem;
     font-weight: 500;
 }
+
 .form_label_style {
     border-bottom-width: 1px;
     font-size: 0.875rem;
     line-height: 1.25rem;
 }
+
+.experiences {
+    display: grid;
+    grid-template-areas: 
+    "a b"
+    "c d";
+ 
+}
+#box1 {
+    grid-area: a;
+    grid-column: 1;
+}
+#box2 {
+    grid-area: b;
+    grid-column: 2;
+}
+#box3 {
+    grid-area: c;
+}
+#box4 {
+    grid-area: d;
+}
+
 #id_name,
 #id_hostel_name,
 #id_title,
 #id_type,
 #id_rating,
 #id_city,
+#id_country,
 #id_username,
+#id_password,
 #id_password1,
 #id_password2,
 #id_description {
-    min-width: 285px;
-    max-width: 285px;
+    min-width: 355px;
+    max-width: 355px;
     border-radius: 5%;
 }

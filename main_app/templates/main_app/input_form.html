@@ -1,73 +1,93 @@
-{% extends 'base.html' %}
-{% load widget_tweaks%}
-{% block content %}
+{% extends 'base.html' %} {% load widget_tweaks%} {% block content %} 
 
-{%if object %}
-<div class="border border-bluePalette-400 bg-bluePalette-300 rounded-lg my-4 shadow-lg">
-  <h1 class="page_title p-4">Input Edit</h1>
-  <form method="POST">
-    {% csrf_token %}
-    <div class="p-2">
-        <div class="mx-4">
-          <label for="Title" class="form_label_style border-b-bluePalette-500"> Title</label>
-          <p class="w-1">{{form.title}}</p>
+{% if object %}
+<h1 class="page_title p-4">Input Edit</h1>
+<form method="POST">
+  {% csrf_token %}
+  <div class="p-2">
+    <div class="mx-4">
+      <label for="Title" class="page_title2">
+        Title
+      </label>
+      <p class="py-2">{{form.title}}</p>
 
-          <label for="Type" class="form_label_style border-b-bluePalette-500"> Type</label>
-          <p class="w-1">{{form.type}}</p>
+      <label for="Type" class="page_title2">
+        Type
+      </label>
+      <p class="py-2">{{form.type}}</p>
 
-          <label for="Description" class="form_label_style border-b-bluePalette-500"> Description</label>
-          <p class="w-1">{{form.description}}</p>
+      <label for="Description" class="page_title2">
+        Description
+      </label>
+      <p class="py-2">{{form.description}}</p>
 
-          <label for="City" class="form_label_style border-b-bluePalette-500"> City</label>
-          <p>{{form.city}}</p>
+      <label for="City" class="page_title2">
+        City
+      </label>
+      <p class="py-2">{{form.city}}</p>
 
-          <label for="Rating" class="form_label_style border-b-bluePalette-500"> Rating</label>
-          <p>{{form.rating | attr:"max:10" | attr:"min:1"}}</p>
-          
-        </div>
-        <div class="border rounded-md p-1 border-bluePalette-400 bg-bluePalette-200 hover:bg-bluePalette-400 m-4 text-center">
-        <input type="submit" value="Your Two Cents!">
-        </div>
+      <label for="Rating" class="page_title2">
+        Rating
+      </label>
+      <p class="py-2">{{form.rating | attr:"max:10" | attr:"min:1"}}</p>
     </div>
-  </form>
-</div>
+    <div
+      class="border rounded-md py-1 border-bluePalette-400 bg-bluePalette-300 hover:bg-bluePalette-400 my-4 text-center"
+    >
+      <input type="submit" value="Edit" />
+    </div>
+  </div>
+</form>
 {% else %}
-<div class="border border-bluePalette-400 bg-bluePalette-300 rounded-lg my-4 shadow-lg">
-  <h1 class="page_title p-4">Share your Thoughts</h1>
-  <form method="POST">
-    {% csrf_token %}
-    <div class="p-2">
-        <div class="mx-4">
-          <label for="Hostel_name" class="form_label_style border-b-bluePalette-500"> Hostel Name</label>
-          <p>{{input_form.hostel}}</p>
 
-          <label for="Title" class="form_label_style border-b-bluePalette-500"> Title</label>
-          <p class="w-1">{{input_form.title}}</p>
+<h1 class="page_title py-2">Share your Thoughts</h1>
+<form method="POST">
+  {% csrf_token %}
+  <div class="py-2">
+    <div>
+      <label for="Hostel_name" class="page_title2">
+        Hostel Name
+      </label>
+      <p class="py-2">{{input_form.hostel}}</p>
 
-          <label for="Type" class="form_label_style border-b-bluePalette-500"> Type</label>
-          <p class="w-1">{{input_form.type}}</p>
+      <label for="Title" class="page_title2">
+        Title
+      </label>
+      <p class="py-2">{{input_form.title}}</p>
 
-          <label for="Description" class="form_label_style border-b-bluePalette-500"> Description</label>
-          <p class="w-1">{{input_form.description}}</p>
+      <label for="Type" class="page_title2">
+        Type
+      </label>
+      <p class="py-2">{{input_form.type}}</p>
 
-          <label for="City" class="form_label_style border-b-bluePalette-500"> City</label>
-          <p>{{input_form.city}}</p>
+      <label for="Description" class="page_title2">
+        Description
+      </label>
+      <p class="w-1">{{input_form.description}}</p>
 
-          <label for="Rating" class="form_label_style border-b-bluePalette-500"> Rating</label>
-          <p>{{input_form.rating | attr:"max:10" | attr:"min:1"}}</p>
-          
-        </div>
-        <div class="border rounded-md p-1 border-bluePalette-400 bg-bluePalette-200 hover:bg-bluePalette-400 m-4 text-center">
-        <input type="submit" value="Your Two Cents!">
-        </div>
+      <label for="City" class="page_title2">
+        City
+      </label>
+      <p class="py-2">{{input_form.city}}</p>
+
+      <label for="Rating" class="page_title2">
+        Rating
+      </label>
+      <p class="py-2">{{input_form.rating | attr:"max:10" | attr:"min:1"}}</p>
     </div>
-  </form>
-</div>
+    <div
+      class="border rounded-md py-1 border-bluePalette-400 bg-bluePalette-300 hover:bg-bluePalette-400 my-4 text-center"
+    >
+      <input type="submit" value="Your Two Cents!" />
+    </div>
+  </div>
+</form>
+
 {% endif %}
 
 <script>
   // add additional JS to initialize select below
-  let selectEl = document.getElementById('id_type');
+  let selectEl = document.getElementById("id_type");
   M.FormSelect.init(selectEl);
-  </script>
+</script>
 {% endblock %}
