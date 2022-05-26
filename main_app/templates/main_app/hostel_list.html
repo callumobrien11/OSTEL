@@ -3,18 +3,20 @@
 
 <h1 class="page_title">(City) Index</h1>
 
-<h2 class="page_title2">Hostels in (City) </h2>
+<h2 class="page_title2 pb-1">Explore </h2>
+<p class="text-gray-400 pb-8">Much love</p>
+
 <div id="indicators-carousel" class="relative" data-carousel="static">
     <!-- Carousel wrapper -->
-    <div class="overflow-hidden relative items-center align-middle text-center h-56 rounded-lg">
+    <div class="overflow-hidden relative items-center align-middle text-center h-56 rounded-lg drop-shadow-xl shadow-slate-900">
         {% for hostel in hostel_list %}
         <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
-            <div class="  w-[355px] h-[234px] rounded-xl border-1 border-gray-200 shadow-2xl bg-hostel bg-contain">
+            <div class="  w-[355px] h-[234px] rounded-xl border-1 border-gray-200 bg-hostel bg-contain">
                 <div class=" h-[110px]"></div>
-                <div class=" bg-white w-max pb-4 rounded-b-xl shadow-2xl">
+                <div class=" bg-slate-100 w-[355px] pb-4 rounded-b-xl">
                     <h2 class="page_title">{{ hostel.name }}</h2>
                     <p class="text-base">City: {{ hostel.city }}</p>
-                    <p><a href="{% url 'hostel_details' hostel.id %}">Details Here</a></p>
+                    <p><a class="rounded-lg border border-bluePalette-300 px-1" href="{% url 'hostel_details' hostel.id %}">Details Here</a></p>
                 </div>
             </div>
         </div>
@@ -36,6 +38,7 @@
     </button>
 </div>
 
+{% comment %} Basic list of all hostels for Dev purposes {% endcomment %}
 {% comment %} <div>
     <ul>    
         {% for hostel in hostel_list %}
@@ -44,44 +47,29 @@
     </ul>
 </div> {% endcomment %}
 
-
-{% comment %} <h1 class="page_title2"> Experiences Index</h1>
-<div id="indicators-carousel" class="relative" data-carousel="static">
-    <!-- Carousel wrapper -->
-    <div class="overflow-hidden relative h-48 rounded-lg sm:h-64 xl:h-80 2xl:h-96">
-        <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
-            <div class="p-6 max-w-[315px] justify-center align-middle rounded-lg border border-bluePalette-500 shadow-md dark:bg-bluePalette-300 dark:border-bluePalette-500">
-                <h2>Experience name</h2>
-                <p>Images: {{ hostel.image }}</p>
-                <p><a href="/">Details Here</a></p>
-            <img src="{{ hostel.image }}" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="...">
-        </div>
+{% comment %} Future Experiences based on location {% endcomment %}
+<h1 class="page_title2 pt-10 pb-1"> Experiences (IceBox)</h1>
+<p class="text-gray-400 pb-8">WAzzz going onnn</p>
+<div class="experiences">
+    <div id="box1" class="">
+        <h2 class="page_title2 text-center">Nature</h2>
+        <div class="border rounded-xl block w-[171px] h-[175px] bg-green-700"></div>
     </div>
-    <div> Missing Model?</div>
-
-    <!-- Slider indicators -->
-    <div class="flex absolute bottom-5 left-1/2 z-30 space-x-3 -translate-x-1/2">
-        <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
-        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
-        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
+    <div id="box2" class="pl-3">
+        <h2 class="page_title2 text-center">Restaurants</h2>
+        <div class="border rounded-xl block w-[171px] h-[175px] bg-gray-400"></div>
     </div>
-    <!-- Slider controls -->
-    <button type="button" class="flex absolute top-0 left-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none" data-carousel-prev>
-        <span class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-            <svg class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
-            <span class="hidden">Previous</span>
-        </span>
-    </button>
-    <button type="button" class="flex absolute top-0 right-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none" data-carousel-next>
-        <span class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-            <svg class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-            <span class="hidden">Next</span>
-        </span>
-    </button>
-</div> {% endcomment %}
-{% comment %} <hr>
-<h1> Community </h1> {% endcomment %}
+    <div id="box3" class="pt-7">
+        <h2 class="page_title2 text-center">Attractions</h2>
+        <div class="border rounded-xl block w-[171px] h-[175px] bg-yellow-400"></div>
+    </div>
+    <div id="box4" class="pl-3 pt-7">
+        <h2 class="page_title2 text-center">Pubs / Bars</h2>
+        <div class="border rounded-xl block w-[171px] h-[175px] bg-amber-300"></div>
+    </div>
+</div>
+
+<hr>
+{% comment %} <h1> Community </h1> {% endcomment %}
 
 {% endblock %}

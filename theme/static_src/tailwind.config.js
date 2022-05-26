@@ -4,6 +4,8 @@
  * If you need the full config, get it from here:
  * https://unpkg.com/browse/tailwindcss@latest/stubs/defaultConfig.stub.js
  */
+const colors = require('tailwindcss/colors')
+
 module.exports = {
     content: [
         /**
@@ -44,6 +46,13 @@ module.exports = {
         fontFamily: {
             'Lib': ['Libre Franklin', 'sans-serif'],
         },
+        screens: {
+            sm: '640px',
+            md: '768px',
+            lg: '1024px',
+            xl: '1280px',
+            '2xl': '1536px',
+        },
         colors: {
             transparent: 'transparent',
             'bluePalette': {
@@ -53,15 +62,36 @@ module.exports = {
                 350: '#229CF3',
                 400: '#0077B6',
                 500: '#010241',
-            } 
+            },
+            black: colors.black,
+            white: colors.white,
+            gray: colors.gray,
+            blue: colors.blue,
+            slate: colors.slate,
+            green: colors.green,
+            yellow: colors.yellow,
+            amber: colors.amber,
         },
         backgroundImage: {
             'hamb': "url('/static/images/hamb.png')",
-            'toronto': "url('/static/images/toronto.webp')",
+            'toronto': "url('/static/images/Toronto.jpeg')",
             'montreal': "url('/static/images/Mont.jpg')",
             'hali': "url('/static/images/Halifax.jpg')",
-            'hostel': "url('/static/images/hostel.webp')"
+            'hostel': "url('/static/images/hostel.webp')",
+            'ostel': "url('/static/images/Ostel.png')",
         },
+        boxShadow: {
+            sm: '0 1px 2px 0 rgb(0 0 0 / 0.05)',
+            DEFAULT: '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)',
+            md: '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)',
+            lg: '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)',
+            xl: '0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)',
+            '2xl': '0 25px 50px -12px rgb(0 0 0 / 0.25)',
+            inner: 'inset 0 2px 4px 0 rgb(0 0 0 / 0.05)',
+            none: 'none',
+        },
+        boxShadowColor: ({ theme }) => theme('colors'),
+
         extend: {},
     },
     plugins: [

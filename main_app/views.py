@@ -56,7 +56,7 @@ def input_create(request):
             input = input_form.save(commit=False)
             input.user = request.user
             input.save()
-            return redirect('input_create')
+            return redirect('input_index')
     input_form = InputForm()
     return render(request, 'main_app/input_form.html', { 'input_form': input_form })
 

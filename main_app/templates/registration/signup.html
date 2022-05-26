@@ -2,32 +2,30 @@
 {% block content %}
 
 
-<div class="border border-bluePalette-400 bg-bluePalette-300 rounded-lg my-4 shadow-lg">
-  <h1 class="page_title p-4">Sign Up</h1>
-  {% if error_message %}<p class="red-text">{{ error_message }}</p>{% endif %}
-  <form action="{% url 'signup' %}" method="POST">
-    {% csrf_token %}
-    <div class="p-2">
-        <div class="mx-4">
-          {% comment %} Username {% endcomment %}
-          <label for="form.username" class="form_label_style border-b-bluePalette-500">Username</label>
-          <p>{{form.username}}</p>
-          <small class="text-xs opacity-50">150 Char Max. Letters, digits and @/./+/-/_ only</small>
-          </br>
-          {% comment %} Password {% endcomment %}
-          <label for="form.password1" class="form_label_style border-b-bluePalette-500">Password</label>
-          <p>{{form.password1}}</p>
-          <small class="text-xs opacity-50">8 Char Min. Can't be all numerics. Not too similar to other personal infomation. Not a commonly used password.</small>
-          {% comment %} Password Confirmation {% endcomment %}
-          </br>
-          <label for="form.password2" class="form_label_style border-b-bluePalette-500"> Password Confirmation</label>
-          <p>{{form.password2}}</p>
-          <small class="text-xs opacity-50">Retype Password</small>
-        </div>
-        <div class="border rounded-md p-1 border-bluePalette-400 bg-bluePalette-200 hover:bg-bluePalette-400 m-4 text-center">
-        <input type="submit" value="Create!">
-        </div>
-    </div>
-  </form>
-</div>
+<h1 class="page_title">Sign Up</h1>
+{% if error_message %}<p class="red-text">{{ error_message }}</p>{% endif %}
+<form action="{% url 'signup' %}" method="POST">
+  {% csrf_token %}
+  <div class="py-2">
+      <div class="">
+        {% comment %} Username {% endcomment %}
+        <label for="form.username" class="form_label_style border-b-bluePalette-500">Username</label>
+        <p>{{form.username}}</p>
+        <small class="text-xs opacity-50">150 Char Max. Letters, digits and @/./+/-/_ only</small>
+        </br>
+        {% comment %} Password {% endcomment %}
+        <label for="form.password1" class="form_label_style border-b-bluePalette-500">Password</label>
+        <p>{{form.password1}}</p>
+        <small class="text-xs opacity-50">8 Char Min. Can't be all numerics. Not too similar to other personal infomation. Not a commonly used password.</small>
+        {% comment %} Password Confirmation {% endcomment %}
+        </br>
+        <label for="form.password2" class="form_label_style border-b-bluePalette-500"> Password Confirmation</label>
+        <p>{{form.password2}}</p>
+        <small class="text-xs opacity-50">Retype Password</small>
+      </div>
+      <div class="border rounded-md border-bluePalette-400 bg-bluePalette-300 hover:bg-bluePalette-400 my-4 py-1 text-center">
+      <input type="submit" value="Create!">
+      </div>
+  </div>
+</form>
 {% endblock %}

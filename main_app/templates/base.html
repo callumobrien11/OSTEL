@@ -59,34 +59,31 @@
         {% comment %} Dropdown {% endcomment %}
           <div id="dropdownDefault" data-dropdown-toggle="dropdown" class="h-8 bg-hamb bg-contain px-4 py-1 rounded-md opacity-70 hover:opacity-100"></div>
             <!-- Dropdown menu content -->
-            <div id="dropdown" class="z-10 hidden bg-bluePalette-200 divide-y divide-gray-100 rounded shadow w-44 dark:bg-gray-700 border-2 border-bluePalette-400 transition-opacity duration-1000 ease-out ">
+            <div id="dropdown" class="z-10 hidden bg-bluePalette-200 divide-y divide-gray-100 rounded shadow w-44 border-2 border-bluePalette-400 transition-opacity duration-1000 ease-out ">
                 <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefault">
                   <li>
-                    <a href="{% url 'hostel_index' %}" class=" block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Hostel List</a>
+                    <a href="{% url 'hostel_index' %}" class=" block px-4 py-2 hover:bg-gray-100 ">Hostel List</a>
                   </li>
                   {% if user.is_authenticated %}
                   <li>
-                    <a href="{% url 'hostel_create' %}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Add Hostel</a>
+                    <a href="{% url 'hostel_create' %}" class="block px-4 py-2 hover:bg-gray-100">Add Hostel</a>
                   </li>
                   <li>
-                    <a href="{% url 'input_index' %}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Community</a>
+                    <a href="{% url 'input_index' %}" class="block px-4 py-2 hover:bg-gray-100">Community</a>
                   </li>
                   <li>
-                    <a href="{% url 'input_create' %}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Add Review</a>
+                    <a href="{% url 'input_create' %}" class="block px-4 py-2 hover:bg-gray-100">Add Review</a>
                   </li>
                   <div class="py-0.5 bg-bluePalette-300"></div>
-                  {% comment %} <li>
-                    <a href="{% url 'user_profile' user.id %}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Profile Page</a>
-                  </li> {% endcomment %}
                   <li>
-                    <a href="{% url 'logout' %}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Log out</a>
+                    <a href="{% url 'logout' %}" class="block px-4 py-2 hover:bg-gray-100">Log out</a>
                   </li>
                   {% else %}
                   <li>
-                    <a href="{% url 'signup' %}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign Up</a>
+                    <a href="{% url 'signup' %}" class="block px-4 py-2 hover:bg-gray-100">Sign Up</a>
                   </li>
                   <li>
-                    <a href="{% url 'login' %}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Log In</a>
+                    <a href="{% url 'login' %}" class="block px-4 py-2 hover:bg-gray-100">Log In</a>
                   </li>
                   {% endif %}
                 </ul>
