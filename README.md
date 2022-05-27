@@ -19,6 +19,7 @@ python
 Django
 HTML/CSS
 Tailwind
+node package manager
 
 Deployed app:
 https://ostel.herokuapp.com/
