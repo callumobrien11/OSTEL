@@ -1,4 +1,4 @@
-# HOSTILE OSTEL
+# OSTEL
 
 Ostel (meaning "Hostel" in various languages) is a booking platform designed to connect travellers with hostels across the globe. 
 This is a full CRUD application, enabling users to create, update and delete hostels.
