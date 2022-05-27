@@ -3,11 +3,10 @@
 Ostel (meaning "Hostel" in various languages) is a booking platform designed to connect travellers with hostels across the globe. 
 This is a full CRUD application, enabling users to create, update and delete hostels.
 Users can search for hostels based on their desired destination.
-The application suggests various local experiences relative to the user's selection, including !
+The application suggests various local experiences relative to the user's selection, including bars, outdoor parks and stores tailored for backpackers.
 
-[Screen Shot 2022-05-26 at 11 42 05 PM](https://user-images.githubusercontent.com/26353499/170624791-175eaca8-9b67-43b0-a00d-055647e4c9fb.png)
-bars, outdoor parks and stores tailored for backpackers.
 
+![Screen Shot 2022-05-26 at 11 42 05 PM](https://user-images.githubusercontent.com/26353499/170624791-175eaca8-9b67-43b0-a00d-055647e4c9fb.png)
 
 ![Screen Shot 2022-05-26 at 11 40 33 PM](https://user-images.githubusercontent.com/26353499/170624629-274831d5-2cb8-4794-9382-f74019d3d706.png)
 
