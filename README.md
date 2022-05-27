@@ -20,12 +20,16 @@ Django
 HTML/CSS
 Tailwind
 
+Deployed app:
 https://ostel.herokuapp.com/
 
+Figma:
 https://www.figma.com/file/ONFQeiign7LogNCZQLmmKP/Collabathon?node-id=34%3A409
 
+ERD:
 https://lucid.app/lucidchart/17d64178-2abd-48c1-84ba-f03e43ed3f8e/edit?invitationId=inv_b9bfa440-7096-43a5-a479-d59bbc6b5f02&referringApp=slack&page=0_0#
 
+Trello:
 https://trello.com/b/YLrPTcjc/project-3-planning
 
 ICEBOX:
