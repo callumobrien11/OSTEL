@@ -1,5 +1,8 @@
 # HOSTILE OSTEL
 
+Team: Benny Yang, Callum O'Brien, Justin Chan
+Designer: Gordon Harrison
+
 Ostel (meaning "Hostel" in various languages) is a booking platform designed to connect travellers with hostels across the globe. 
 This is a full CRUD application, enabling users to create, update and delete hostels.
 Users can search for hostels based on their desired destination.
