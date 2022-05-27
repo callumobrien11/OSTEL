@@ -1,4 +1,4 @@
-# HOSTILE OSTEL
+#OSTEL
 
 Team: Benny Yang, Callum O'Brien, Justin Chan
 Designer: Gordon Harrison
